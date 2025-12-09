@@ -2,11 +2,13 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
+    tsconfigPaths(),
     dts({
       tsconfigPath: resolve(__dirname, 'tsconfig.json'),
       insertTypesEntry: true,
@@ -17,7 +19,7 @@ export default defineConfig({
       entry: resolve(__dirname, './components/index.tsx'),
       name: 'srcl',
       // the proper extensions will be added
-      fileName: 'scrl',
+      fileName: 'srcl',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
