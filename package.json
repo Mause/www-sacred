@@ -9,8 +9,7 @@
   "type": "module",
   "files": [
     "package.json",
-    "./dist/srcl.js",
-    "./dist/srcl.d.ts"
+    "dist"
   ],
   "exports": {
     "./components": {
