@@ -7,7 +7,7 @@
   "license": "MIT",
   "version": "1.1.17",
   "exports": {
-    "./components": "./components"
+    "./components": "./components/index.tsx"
   },
   "scripts": {
     "dev": "next -p 10000",

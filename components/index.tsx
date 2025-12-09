@@ -1,1 +1,1 @@
-export * from './Accordian';
+export * as Accordion from './Accordion.tsx';
