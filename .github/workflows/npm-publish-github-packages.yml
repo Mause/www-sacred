@@ -13,14 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
+          cache: yarn
           node-version: 20
       - run: yarn --frozen
       # - run: yarn test
       - run: yarn build
       - run: yarn pack
-      # - run: npx publint
+      - run: npx publint
 
   publish-gpr:
     needs: build
