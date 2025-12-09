@@ -19,7 +19,8 @@ jobs:
       - run: yarn --frozen
       # - run: yarn test
       - run: yarn build
-      - run: npx publint
+      - run: yarn pack
+      # - run: npx publint
 
   publish-gpr:
     needs: build
