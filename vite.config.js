@@ -17,7 +17,7 @@ export default defineConfig({
       entry: resolve(__dirname, './components/index.tsx'),
       name: 'srcl',
       // the proper extensions will be added
-      fileName: 'scrl',
+      fileName: 'srcl',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
