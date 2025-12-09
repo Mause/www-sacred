@@ -9,10 +9,13 @@
   "type": "module",
   "files": [
     "package.json",
-    "./components/index.tsx"
+    "./dist"
   ],
   "exports": {
-    "./components": "./components/index.tsx"
+    "./components": {
+      "import": "./dist/srcl.js",
+      "types": "./dist/srcl.d.ts"
+    }
   },
   "scripts": {
     "dev": "next -p 10000",
