@@ -9,12 +9,13 @@
   "type": "module",
   "files": [
     "package.json",
-    "./dist"
+    "./dist/srcl.js",
+    "./dist/srcl.d.ts"
   ],
   "exports": {
     "./components": {
-      "import": "./dist/srcl.js",
-      "types": "./dist/srcl.d.ts"
+      "types": "./dist/srcl.d.ts",
+      "import": "./dist/srcl.js"
     }
   },
   "scripts": {
