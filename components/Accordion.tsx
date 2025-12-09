@@ -1,11 +1,11 @@
 'use client';
 
-import styles from './Accordion.module.scss';
+import styles from '@components/Accordion.module.scss';
 
 import * as React from 'react';
 import * as Utilities from '../common/utilities';
 
-import Row from './Row';
+import Row from '@components/Row';
 
 interface AccordionProps {
   defaultValue?: boolean;
