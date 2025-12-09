@@ -21,6 +21,8 @@ jobs:
       # - run: yarn test
       - run: yarn build
       - run: yarn pack
+      - run: ls dist/
+      - run: tar xgf srcl-v1.1.17.tgz
       - run: npx publint
 
   publish-gpr:
