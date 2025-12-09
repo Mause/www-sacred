@@ -9,9 +9,13 @@
   "type": "module",
   "files": [
     "package.json",
+    "global.css",
+    "global-fonts.css",
     "dist"
   ],
   "exports": {
+    "./global.css": "./global.css",
+    "./global-fonts.css": "./global-fonts.css",
     "./components": {
       "types": "./dist/srcl.d.ts",
       "import": "./dist/srcl.js"
