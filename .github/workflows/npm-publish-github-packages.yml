@@ -44,6 +44,8 @@ jobs:
       - run: yarn --immutable
       - run: yarn build
       - run: yarn pack
-      - run: yarn npm publish
+      - name: Configure GitHub Packages Auth
+        run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn npm publish
