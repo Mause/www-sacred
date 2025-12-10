@@ -16,24 +16,17 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, './components/index.tsx'),
+      entry: {
+        components: resolve(__dirname, './components/index.tsx'),
+        srcl: resolve(__dirname, './index.tsx'),
+      },
+      types: ['mjs', 'es', 'cjs'],
       name: 'srcl',
-      // the proper extensions will be added
-      fileName: 'srcl',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['react', 'react-dom'],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: 'Vue',
-          'react-dom': 'ReactDOM',
-          react: 'React',
-        },
-      },
     },
   },
 });

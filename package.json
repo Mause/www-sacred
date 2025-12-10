@@ -9,21 +9,36 @@
   "type": "module",
   "files": [
     "package.json",
+    "./dist/srcl.js",
+    "./dist/srcl.d.ts",
     "global.css",
     "global-fonts.css",
+    "./global.css",
+    "./global-fonts.css",
+    "./dist/components.js",
+    "./dist/components.d.ts",
     "dist"
   ],
   "exports": {
-    "./global.css": "./global.css",
-    "./global-fonts.css": "./global-fonts.css",
-    "./components": {
+    "./global.css": {
+      "import": "./global.css"
+    },
+    "./global-fonts.css": {
+      "import": "./global-fonts.css"
+    },
+    ".": {
       "types": "./dist/srcl.d.ts",
       "import": "./dist/srcl.js"
+    },
+    "./components": {
+      "types": "./dist/components.d.ts",
+      "import": "./dist/components.js"
     }
   },
   "scripts": {
     "dev": "next -p 10000",
-    "build": "vite build",
+    "build": "rimraf dist && vite build",
+    "check-exports": "yarn build && npx publint",
     "start": "PORT=10000 next start",
     "lint": "next lint"
   },
@@ -36,6 +51,7 @@
   "devDependencies": {
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
+    "rimraf": "^6.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "validate-package-exports": "^0.14.0",
