@@ -18,7 +18,7 @@ jobs:
         with:
           # cache: yarn
           node-version: 20
-      - run: yarn --frozen
+      - run: yarn --immutable
       # - run: yarn test
       - run: yarn build
       - run: yarn pack
@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-      - run: yarn --frozen
+      - run: yarn --immutable
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
