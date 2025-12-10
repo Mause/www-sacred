@@ -38,6 +38,7 @@
   "scripts": {
     "dev": "next -p 10000",
     "build": "rimraf dist && vite build",
+    "check-exports": "yarn build && npx publint",
     "start": "PORT=10000 next start",
     "lint": "next lint"
   },
