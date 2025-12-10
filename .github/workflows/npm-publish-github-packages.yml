@@ -13,17 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: corepack enable
       - uses: actions/setup-node@v6
         with:
-          # cache: yarn
+          cache: yarn
           node-version: 20
-      - run: yarn --frozen
+      - run: yarn --immutable
       # - run: yarn test
       - run: yarn build
       - run: yarn pack
       - run: ls dist*
-      - run: tar xvzf srcl-v1.1.17.tgz
-      # - run: npx publint --strict
+      - run: tar xvzf package.tgz
+      - run: npx publint --strict
 
   publish-gpr:
     needs: build
@@ -34,11 +35,13 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
+          cache: yarn
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-      - run: yarn --frozen
+      - run: yarn --immutable
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
