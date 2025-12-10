@@ -18,10 +18,10 @@ export default defineConfig({
     lib: {
       entry: {
         components: resolve(__dirname, './components/index.tsx'),
-        slcr: resolve(__dirname, './index.tsx'),
+        srcl: resolve(__dirname, './index.tsx'),
       },
       types: ['mjs', 'es', 'cjs'],
-      name: 'slcr',
+      name: 'srcl',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
