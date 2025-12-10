@@ -8,7 +8,7 @@
 .env-production
 .DS_STORE
 DS_STORE
-yarn.lock
+.yarn
 node_modules
 dist
 analytics.txt
