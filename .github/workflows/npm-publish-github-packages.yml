@@ -24,7 +24,7 @@ jobs:
       - run: yarn pack
       - run: ls dist*
       - run: tar xvzf srcl-v1.1.17.tgz
-      # - run: npx publint --strict
+      - run: npx publint --strict
 
   publish-gpr:
     needs: build
