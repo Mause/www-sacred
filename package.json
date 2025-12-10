@@ -37,7 +37,7 @@
   },
   "scripts": {
     "dev": "next -p 10000",
-    "build": "vite build",
+    "build": "rimraf dist && vite build",
     "start": "PORT=10000 next start",
     "lint": "next lint"
   },
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
+    "rimraf": "^6.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "validate-package-exports": "^0.14.0",
