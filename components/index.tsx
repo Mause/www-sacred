@@ -1,4 +1,13 @@
 export * as Accordion from './Accordion';
+export * as ActionBar from './ActionBar';
+export * as Avatar from './Avatar';
+export * as Badge from './Badge';
+export * as Button from './Button';
+export * as Card from './Card';
+export * as Checkbox from './Checkbox';
+export * as Input from './Input';
+export * as Row from './Row';
+export * as Select from './Select';
+export * as Table from './Table';
 export * as Text from './Text';
 export * as Tooltip from './Tooltip';
-export * as Row from './Row';
