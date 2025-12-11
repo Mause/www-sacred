@@ -46,7 +46,7 @@ jobs:
       - run: yarn build
       - run: yarn pack
       - run: npm whoami
-      - run: npm publish package.tgz
+      - run: npm publish package.tgz --registry=https://npm.pkg.github.com/
       - name: Configure GitHub Packages Auth
         run: |
           yarn config set npmAlwaysAuth true
