@@ -3,10 +3,19 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { NodePackageImporter } from 'sass-embedded';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+        importers: [new NodePackageImporter()],
+      },
+    },
+  },
   plugins: [
     tsconfigPaths(),
     dts({
