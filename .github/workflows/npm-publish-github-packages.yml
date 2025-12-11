@@ -47,7 +47,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: yarn --immutable
       - run: |
-          npm version ""${{ github.event.release.tag_name || 'v0.0.0' }}"" --no-git-tag-version
+          npm version "${{ github.event.release.tag_name || 'v0.0.0' }}" --no-git-tag-version
           npm version
       - run: yarn build
       - run: yarn pack
