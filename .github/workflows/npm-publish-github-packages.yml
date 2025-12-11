@@ -32,6 +32,8 @@ jobs:
     permissions:
       contents: read
       packages: write
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - uses: actions/checkout@v6
       - run: corepack enable
@@ -44,6 +46,7 @@ jobs:
       - run: yarn build
       - run: yarn pack
       - run: npm whoami
+      - run: npm publish package.tgz
       - name: Configure GitHub Packages Auth
         run: |
           yarn config set npmAlwaysAuth true
