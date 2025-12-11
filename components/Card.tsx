@@ -6,7 +6,7 @@ import * as Utilities from '@common/utilities';
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   title?: string | any;
-  mode?: string | any;
+  mode?: 'left' | 'right';
 }
 
 const Card: React.FC<CardProps> = ({ children, mode, title, style, ...rest }) => {
