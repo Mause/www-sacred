@@ -50,7 +50,8 @@ jobs:
       - run: yarn pack
       - run: npm whoami --registry=https://npm.pkg.github.com/
       - run: npm version
-      - run: npm version from-git
       - run: npm publish package.tgz --registry=https://npm.pkg.github.com/ --dry-run
-      - run: npm publish package.tgz --registry=https://npm.pkg.github.com/
-        if: github.event_name == 'release'
+      - if: github.event_name == 'release'
+        run: |
+          npm version ${{ github.event.release.tag_name }}
+          npm publish package.tgz --registry=https://npm.pkg.github.com/
