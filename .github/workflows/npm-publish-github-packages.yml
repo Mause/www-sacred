@@ -51,10 +51,10 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: cat .npmrc
-      - run: cat .yarnrc.yml
+      - run: cat .npmrc || echo 'no'
+      - run: cat .yarnrc.yml || echo 'no'
       - run: cat ~/.yarnrc.yml || echo 'no'
-      - run: cat ~/.npmrc
+      - run: cat ~/.npmrc || echo 'no'
       - run: yarn npm whoami
       - run: yarn npm publish --access restricted --tag latest --dry-run
       - run: yarn npm publish --access restricted --tag latest
