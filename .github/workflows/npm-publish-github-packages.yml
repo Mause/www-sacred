@@ -44,7 +44,6 @@ jobs:
       - run: yarn build
       - run: yarn pack
       - name: Configure GitHub Packages Auth
-
         run: |
           yarn npm logout
           echo "@mause:registry=https://npm.pkg.github.com/" > .npmrc
@@ -53,6 +52,10 @@ jobs:
           yarn npm whoami
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: cat .npmrc
+      - run: cat .yarnrc.yml
+      - run: cat ~/.yarnrc.yml || echo 'no'
+      - run: cat ~/.npmrc
       - run: yarn npm publish --access restricted --tag latest --dry-run
       - run: yarn npm publish --access restricted --tag latest
         if: github.event_name == 'release'
