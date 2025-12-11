@@ -33,6 +33,9 @@
     "./global-fonts.css": {
       "import": "./global-fonts.css"
     },
+    "./www-sacred.css": {
+      "import": "./dist/www-sacred.css"
+    },
     ".": {
       "types": "./dist/srcl.d.ts",
       "import": "./dist/srcl.js"
