@@ -77,6 +77,6 @@ export { default as ModalError } from './modals/ModalError';
 export { default as ModalMatrixModes } from './modals/ModalMatrixModes';
 export { default as DefaultActionBar } from './page/DefaultActionBar';
 export { default as DefaultLayout } from './page/DefaultLayout';
-export { default as ModalContext } from './page/ModalContext';
+export { useModals, type ModalComponent, ModalProvider, type ModalState } from './page/ModalContext';
 export { default as IntDevLogo } from './svg/IntDevLogo';
 export { default as Sphere } from './svg/Sphere';
