@@ -523,6 +523,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mause/srcl@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@mause/srcl@workspace:."
+  dependencies:
+    "@types/node": "npm:^24.10.1"
+    "@types/react": "npm:^19.2.7"
+    next: "npm:^16.0.7"
+    react: "npm:^19.2.0"
+    react-dom: "npm:^19.2.0"
+    rimraf: "npm:^6.1.2"
+    sass: "npm:1.94.2"
+    ts-node: "npm:^10.9.2"
+    typescript: "npm:^5.9.3"
+    validate-package-exports: "npm:^0.14.0"
+    vite: "npm:^7.2.7"
+    vite-plugin-dts: "npm:^4.5.4"
+    vite-tsconfig-paths: "npm:^5.1.4"
+  languageName: unknown
+  linkType: soft
+
 "@microsoft/api-extractor-model@npm:7.32.2":
   version: 7.32.2
   resolution: "@microsoft/api-extractor-model@npm:7.32.2"
@@ -3247,26 +3267,6 @@ __metadata:
   checksum: 10c0/ecadcfe4c771890140da5023d43e190b7566d9cf8b2d238600f31bec0fc653f328da4450eb04bd59a431771a8e9cc0e118f0aa3974b683a4981b4e07abc2a5bb
   languageName: node
   linkType: hard
-
-"srcl@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "srcl@workspace:."
-  dependencies:
-    "@types/node": "npm:^24.10.1"
-    "@types/react": "npm:^19.2.7"
-    next: "npm:^16.0.7"
-    react: "npm:^19.2.0"
-    react-dom: "npm:^19.2.0"
-    rimraf: "npm:^6.1.2"
-    sass: "npm:1.94.2"
-    ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.9.3"
-    validate-package-exports: "npm:^0.14.0"
-    vite: "npm:^7.2.7"
-    vite-plugin-dts: "npm:^4.5.4"
-    vite-tsconfig-paths: "npm:^5.1.4"
-  languageName: unknown
-  linkType: soft
 
 "ssri@npm:^13.0.0":
   version: 13.0.0
