@@ -1,5 +1,12 @@
 {
-  "name": "srcl",
+  "name": "@mause/www-sacred",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mause/www-sacred.git"
+  },
   "description": "SRCL is an open-source React component and style repository that helps you build web applications, desktop applications, and static websites with terminal aesthetics.",
   "engines": {
     "node": ">=18"

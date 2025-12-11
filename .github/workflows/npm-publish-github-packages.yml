@@ -29,7 +29,6 @@ jobs:
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'release'
     permissions:
       contents: read
       packages: write
@@ -48,4 +47,5 @@ jobs:
         run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: yarn npm publish
+      # - run: yarn npm login --publish --always-auth --scope=@${{ github.repository_owner }}
+      - run: yarn npm publish --access restricted --tag latest ${{ github.event_name == 'release' && '' || '--dry-run' }}
