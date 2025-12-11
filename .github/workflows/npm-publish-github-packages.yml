@@ -48,6 +48,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn npm publish --access restricted --tag latest --dry-run
-        if: github.event_name != 'release'
       - run: yarn npm publish --access restricted --tag latest
         if: github.event_name == 'release'
