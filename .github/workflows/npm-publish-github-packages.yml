@@ -51,6 +51,7 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn config list
       - run: cat .npmrc || echo 'no'
       - run: cat .yarnrc.yml || echo 'no'
       - run: cat ~/.yarnrc.yml || echo 'no'
