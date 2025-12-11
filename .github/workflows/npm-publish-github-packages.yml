@@ -49,6 +49,7 @@ jobs:
           echo "@mause:registry=https://npm.pkg.github.com/" > .npmrc
           echo "registry=https://npm.pkg.github.com/" >> .npmrc
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
+          echo "npmAuthToken: ${GITHUB_TOKEN}" >> .yarnrc.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn config
