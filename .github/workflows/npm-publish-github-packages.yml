@@ -53,6 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn config
+      - run: yarn version --patch
       - run: cat .npmrc || echo 'no'
       - run: cat .yarnrc.yml || echo 'no'
       - run: cat ~/.yarnrc.yml || echo 'no'
