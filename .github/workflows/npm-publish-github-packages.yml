@@ -48,7 +48,7 @@ jobs:
           yarn config set npmAlwaysAuth true
           yarn config set npmRegistryServer https://npm.pkg.github.com
           yarn config set npmPublishRegistry https://npm.pkg.github.com
-          yarn config set npmAuthToken ${{ GITHUB_TOKEN }}
+          yarn config set npmAuthToken $GITHUB_TOKEN
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn config
