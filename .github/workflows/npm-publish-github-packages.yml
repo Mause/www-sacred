@@ -44,7 +44,13 @@ jobs:
       - run: yarn build
       - run: yarn pack
       - name: Configure GitHub Packages Auth
-        run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+
+        run: |
+          yarn logout
+          echo "@mause:registry=https://npm.pkg.github.com/" > .npmrc
+          echo "registry=https://npm.pkg.github.com/" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
+          yarn npm whoami
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn npm publish --access restricted --tag latest --dry-run
