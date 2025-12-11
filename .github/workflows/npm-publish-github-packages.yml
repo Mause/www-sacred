@@ -45,11 +45,10 @@ jobs:
       - run: yarn pack
       - name: Configure GitHub Packages Auth
         run: |
-          yarn npm logout
-          echo "@mause:registry=https://npm.pkg.github.com/" > .npmrc
-          echo "registry=https://npm.pkg.github.com/" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
-          echo "npmAuthToken: ${NODE_AUTH_TOKEN}" >> .yarnrc.yml
+          yarn config set npmAlwaysAuth true
+          yarn config set npmRegistryServer https://npm.pkg.github.com
+          yarn config set npmPublishRegistry https://npm.pkg.github.com
+          yarn config set npmAuthToken ${{ GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn config
