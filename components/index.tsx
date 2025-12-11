@@ -9,6 +9,7 @@ export { default as CodeBlock } from './CodeBlock';
 export { default as ContentFluid } from './ContentFluid';
 export { default as DatePicker } from './DatePicker';
 export { default as Drawer } from './Drawer';
+export { default as Grid } from './Grid';
 export { default as Input } from './Input';
 export { default as ListItem } from './ListItem';
 export { default as ModalStack } from './ModalStack';
