@@ -47,4 +47,5 @@ jobs:
         run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn npm login --registry https://npm.pkg.github.com/
       - run: yarn npm publish --access restricted --tag latest ${{ github.event_name == 'release' && '' || '--dry-run' }}
