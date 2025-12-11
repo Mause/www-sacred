@@ -54,6 +54,6 @@ jobs:
       - if: github.event_name == 'release'
         run: |
           version="${{ github.event.release.tag_name }}"
-          npm version "${version#*_}" --no-git-tag-version
+          npm version "${version#*v}" --no-git-tag-version
           npm version
           npm publish package.tgz --registry=https://npm.pkg.github.com/
