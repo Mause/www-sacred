@@ -116,6 +116,7 @@ interface DefaultActionBarProps {
 
 const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   const [isGrid, setGrid] = React.useState(false);
+  const [font, setFont] = React.setState('');
   useHotkeys('ctrl+g', () => toggleDebugGrid());
 
   useGlobalNavigationHotkeys();
@@ -140,6 +141,10 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
     };
   }, []);
 
+  React.useEffect(() => {
+    Utilities.onHandleFontChange(font);
+  }, [font]);
+
   return (
     <div className={styles.root}>
       <ActionBar
@@ -152,177 +157,177 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               {
                 icon: '⊹',
                 children: 'Chicago FLF Proportional [MIT]',
-                onClick: () => Utilities.onHandleFontChange('font-use-chicago-mono'),
+                onClick: () => setFont('font-use-chicago-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Commit Mono V143 [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-commit-mono'),
+                onClick: () => setFont('font-use-commit-mono'),
               },
               {
                 icon: '⊹',
                 children: 'CodeNewRoman Mono 2.0 [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-code-new-roman-mono'),
+                onClick: () => setFont('font-use-code-new-roman-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Departure Mono [MIT]',
-                onClick: () => Utilities.onHandleFontChange('font-use-departure-mono'),
+                onClick: () => setFont('font-use-departure-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Fira Code [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-fira-code'),
+                onClick: () => setFont('font-use-fira-code'),
               },
               {
                 icon: '⊹',
                 children: 'Fragment Mono [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-fragment-mono'),
+                onClick: () => setFont('font-use-fragment-mono'),
               },
               {
                 icon: '⊹',
                 children: 'GlassTTY: TrueType VT220 [NO LICENSE]',
-                onClick: () => Utilities.onHandleFontChange('font-use-glasstty-vt220'),
+                onClick: () => setFont('font-use-glasstty-vt220'),
               },
               {
                 icon: '⊹',
                 children: 'Geist Mono [OFL] [DEFAULT]',
-                onClick: () => Utilities.onHandleFontChange(''),
+                onClick: () => setFont(''),
               },
               {
                 icon: '⊹',
                 children: 'Intel One Mono 1.4.0 [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-intel-one-mono'),
+                onClick: () => setFont('font-use-intel-one-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Iosevka Term [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-iosevka-term'),
+                onClick: () => setFont('font-use-iosevka-term'),
               },
               {
                 icon: '⊹',
                 children: 'JetBrains Mono [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-jet-brains-mono'),
+                onClick: () => setFont('font-use-jet-brains-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Julia Mono 0.061 [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-julia-mono'),
+                onClick: () => setFont('font-use-julia-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Kommuna Mono™ Trial [type.tmpstate.net]',
-                onClick: () => Utilities.onHandleFontChange('font-use-kommuna-mono'),
+                onClick: () => setFont('font-use-kommuna-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Monaspace Argon Variable [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-monaspace-argon-mono'),
+                onClick: () => setFont('font-use-monaspace-argon-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Monaspace Krypton Variable [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-monaspace-krypton-mono'),
+                onClick: () => setFont('font-use-monaspace-krypton-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Monaspace Neon Variable [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-monaspace-neon-mono'),
+                onClick: () => setFont('font-use-monaspace-neon-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Monaspace Radon Variable [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-monaspace-radon-mono'),
+                onClick: () => setFont('font-use-monaspace-radon-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Monaspace Xenon Variable [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-monaspace-xenon-mono'),
+                onClick: () => setFont('font-use-monaspace-xenon-mono'),
               },
               {
                 icon: '⊹',
                 children: 'M1 Plus Mono [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-m1-plus-mono'),
+                onClick: () => setFont('font-use-m1-plus-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Panama Mono™ Trial [type.tmpstate.net]',
-                onClick: () => Utilities.onHandleFontChange('font-use-panama-mono'),
+                onClick: () => setFont('font-use-panama-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Web437 DOS/V re. ANK16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web437-dos-v-ank16'),
+                onClick: () => setFont('font-use-web437-dos-v-ank16'),
               },
               {
                 icon: '⊹',
                 children: 'Web437 DOS/V re. ANK19 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web437-dos-v-ank19'),
+                onClick: () => setFont('font-use-web437-dos-v-ank19'),
               },
               {
                 icon: '⊹',
                 children: 'Web437 DOS/V re. ANK24 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web437-dos-v-ank24'),
+                onClick: () => setFont('font-use-web437-dos-v-ank24'),
               },
               {
                 icon: '⊹',
                 children: 'Web437 DOS/V re. ANK30 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web437-dos-v-ank30'),
+                onClick: () => setFont('font-use-web437-dos-v-ank30'),
               },
               {
                 icon: '⊹',
                 children: 'Web437 Nix8810 M16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web437-nix8810-m16'),
+                onClick: () => setFont('font-use-web437-nix8810-m16'),
               },
               {
                 icon: '⊹',
                 children: 'Web437 Pheonix EGA 8X8 2Y [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web437-pheonix-ega-8x8-2y'),
+                onClick: () => setFont('font-use-web437-pheonix-ega-8x8-2y'),
               },
               {
                 icon: '⊹',
                 children: 'Web437 Sanyo MB C775 2Y [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web437-sanyo-mb-c775-2y'),
+                onClick: () => setFont('font-use-web437-sanyo-mb-c775-2y'),
               },
               {
                 icon: '⊹',
                 children: 'WebPlus AST PremiumExec [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-webplus-ast-premiumexec'),
+                onClick: () => setFont('font-use-webplus-ast-premiumexec'),
               },
               {
                 icon: '⊹',
                 children: 'WebPlus IBM BIOS [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web-plus-ibm-bios'),
+                onClick: () => setFont('font-use-web-plus-ibm-bios'),
               },
               {
                 icon: '⊹',
                 children: 'WebPlus IBM VGA 8X16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-web-plus-ibm-vga-8x16'),
+                onClick: () => setFont('font-use-web-plus-ibm-vga-8x16'),
               },
               {
                 icon: '⊹',
                 children: 'WebPlus ToshibaTxL1-8x16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => Utilities.onHandleFontChange('font-use-toshiba-tx-l1-8x16'),
+                onClick: () => setFont('font-use-toshiba-tx-l1-8x16'),
               },
               {
                 icon: '⊹',
                 children: 'SFMono Square [FOSS]',
-                onClick: () => Utilities.onHandleFontChange('font-use-sfmono-square'),
+                onClick: () => setFont('font-use-sfmono-square'),
               },
               {
                 icon: '⊹',
                 children: 'Server Mono [OFL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-server-mono'),
+                onClick: () => setFont('font-use-server-mono'),
               },
               {
                 icon: '⊹',
                 children: 'TX-02 Berkeley Mono™ Trial [usgraphics.com]',
-                onClick: () => Utilities.onHandleFontChange('font-use-berkeley-mono'),
+                onClick: () => setFont('font-use-berkeley-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Ubuntu Sans Mono 1.006 [UBL]',
-                onClick: () => Utilities.onHandleFontChange('font-use-ubuntu-mono'),
+                onClick: () => setFont('font-use-ubuntu-mono'),
               },
             ],
           },
