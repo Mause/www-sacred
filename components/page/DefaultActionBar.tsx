@@ -114,51 +114,8 @@ interface DefaultActionBarProps {
   }[];
 }
 
-const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
-  const [isGrid, setGrid] = React.useState(false);
-  const [font, setFont] = React.setState('');
-  useHotkeys('ctrl+g', () => toggleDebugGrid());
-
-  useGlobalNavigationHotkeys();
-
-  React.useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-    const applyTheme = (e: MediaQueryList | MediaQueryListEvent) => {
-      if (e.matches) {
-        Utilities.onHandleAppearanceChange('theme-dark');
-      } else {
-        Utilities.onHandleAppearanceChange('');
-      }
-    };
-
-    applyTheme(prefersDark);
-
-    prefersDark.addEventListener('change', applyTheme);
-
-    return () => {
-      prefersDark.removeEventListener('change', applyTheme);
-    };
-  }, []);
-
-  React.useEffect(() => {
-    Utilities.onHandleFontChange(font);
-  }, [font]);
-
-  return (
-    <div className={styles.root}>
-      <ActionBar
-        items={[
-          {
-            hotkey: '⌃+O',
-            body: 'Fonts',
-            openHotkey: 'ctrl+o',
-            items: [
-              {
-                icon: '⊹',
-                children: 'Chicago FLF Proportional [MIT]',
-                onClick: () => setFont('font-use-chicago-mono'),
-              },
+const FONTS = [
+              ['Chicago FLF Proportional [MIT]', 'font-use-chicago-mono'],
               {
                 icon: '⊹',
                 children: 'Commit Mono V143 [OFL]',
@@ -329,7 +286,53 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
                 children: 'Ubuntu Sans Mono 1.006 [UBL]',
                 onClick: () => setFont('font-use-ubuntu-mono'),
               },
-            ],
+            ];
+
+const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
+  const [isGrid, setGrid] = React.useState(false);
+  const [font, setFont] = React.setState('');
+  useHotkeys('ctrl+g', () => toggleDebugGrid());
+
+  useGlobalNavigationHotkeys();
+
+  React.useEffect(() => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applyTheme = (e: MediaQueryList | MediaQueryListEvent) => {
+      if (e.matches) {
+        Utilities.onHandleAppearanceChange('theme-dark');
+      } else {
+        Utilities.onHandleAppearanceChange('');
+      }
+    };
+
+    applyTheme(prefersDark);
+
+    prefersDark.addEventListener('change', applyTheme);
+
+    return () => {
+      prefersDark.removeEventListener('change', applyTheme);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    Utilities.onHandleFontChange(font);
+  }, [font]);
+
+  return (
+    <div className={styles.root}>
+      <ActionBar
+        items={[
+          {
+            hotkey: '⌃+O',
+            body: 'Fonts',
+            openHotkey: 'ctrl+o',
+            items: FONTS.map(([name, code]) => ({
+              icon: '⊹',
+              children: name,
+              selection: font === code,
+              onClick: () => setFont(code),
+            }),
           },
           {
             hotkey: '⌃+A',
