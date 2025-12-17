@@ -165,9 +165,9 @@ const MODES = [
 
 const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   const [isGrid, setGrid] = React.useState(false);
-  const [font, setFont] = React.setState('');
-  const [appearanceMode, setAppearanceMode] = React.setState('');
-  const [theme, setTheme] = React.setState('');
+  const [font, setFont] = React.useState('');
+  const [appearanceMode, setAppearanceMode] = React.useState('');
+  const [theme, setTheme] = React.useState('');
   useHotkeys('ctrl+g', () => toggleDebugGrid());
 
   useGlobalNavigationHotkeys();
