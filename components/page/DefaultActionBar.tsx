@@ -167,6 +167,7 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   const [isGrid, setGrid] = React.useState(false);
   const [font, setFont] = React.setState('');
   const [appearanceMode, setAppearanceMode] = React.setState('');
+  const [theme, setTheme] = React.setState('');
   useHotkeys('ctrl+g', () => toggleDebugGrid());
 
   useGlobalNavigationHotkeys();
@@ -176,9 +177,9 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
 
     const applyTheme = (e: MediaQueryList | MediaQueryListEvent) => {
       if (e.matches) {
-        Utilities.onHandleAppearanceChange('theme-dark');
+        setTheme('theme-dark');
       } else {
-        Utilities.onHandleAppearanceChange('');
+        setTheme('');
       }
     };
 
@@ -197,6 +198,9 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   React.useEffect(() => {
     Utilities.onHandleAppearanceModeChange(appearanceMode);
   }, [appearanceMode]);
+  React.useEffect(() => {
+    Utilities.onHandleAppearanceChange(theme);
+  }, [theme]);
 
   return (
     <div className={styles.root}>
@@ -221,12 +225,14 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               {
                 icon: '⊹',
                 children: 'Light',
-                onClick: () => Utilities.onHandleAppearanceChange(''),
+                selection: theme === '',
+                onClick: () => setTheme(''),
               },
               {
                 icon: '⊹',
                 children: 'Dark',
-                onClick: () => Utilities.onHandleAppearanceChange('theme-dark'),
+                selection: theme === 'theme-dark',
+                onClick: () => setTheme('theme-dark'),
               },
             ],
           },
