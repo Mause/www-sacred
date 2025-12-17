@@ -196,7 +196,7 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               children: name,
               selection: font === code,
               onClick: () => setFont(code),
-            }),
+            })),
           },
           {
             hotkey: '⌃+A',
