@@ -152,9 +152,21 @@ const FONTS = [
   ['Ubuntu Sans Mono 1.006 [UBL]', 'font-use-ubuntu-mono'],
 ];
 
+const MODES = [
+  ['None', ''],
+  ['Blue', 'tint-blue'],
+  ['Green', 'tint-green'],
+  ['Orange', 'tint-orange'],
+  ['Purple', 'tint-purple'],
+  ['Red', 'tint-red'],
+  ['Yellow', 'tint-yellow'],
+  ['Pink', 'tint-pink'],
+];
+
 const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   const [isGrid, setGrid] = React.useState(false);
   const [font, setFont] = React.setState('');
+  const [appearanceMode, setAppearanceMode] = React.setState('');
   useHotkeys('ctrl+g', () => toggleDebugGrid());
 
   useGlobalNavigationHotkeys();
@@ -182,6 +194,9 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   React.useEffect(() => {
     Utilities.onHandleFontChange(font);
   }, [font]);
+  React.useEffect(() => {
+    Utilities.onHandleAppearanceModeChange(appearanceMode);
+  }, [appearanceMode]);
 
   return (
     <div className={styles.root}>
@@ -219,48 +234,12 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
             hotkey: '⌃+T',
             body: 'Mode',
             openHotkey: 'ctrl+t',
-            items: [
-              {
-                icon: '⊹',
-                children: 'None',
-                onClick: () => Utilities.onHandleAppearanceModeChange(''),
-              },
-              {
-                icon: '⊹',
-                children: 'Blue',
-                onClick: () => Utilities.onHandleAppearanceModeChange('tint-blue'),
-              },
-              {
-                icon: '⊹',
-                children: 'Green',
-                onClick: () => Utilities.onHandleAppearanceModeChange('tint-green'),
-              },
-              {
-                icon: '⊹',
-                children: 'Orange',
-                onClick: () => Utilities.onHandleAppearanceModeChange('tint-orange'),
-              },
-              {
-                icon: '⊹',
-                children: 'Purple',
-                onClick: () => Utilities.onHandleAppearanceModeChange('tint-purple'),
-              },
-              {
-                icon: '⊹',
-                children: 'Red',
-                onClick: () => Utilities.onHandleAppearanceModeChange('tint-red'),
-              },
-              {
-                icon: '⊹',
-                children: 'Yellow',
-                onClick: () => Utilities.onHandleAppearanceModeChange('tint-yellow'),
-              },
-              {
-                icon: '⊹',
-                children: 'Pink',
-                onClick: () => Utilities.onHandleAppearanceModeChange('tint-pink'),
-              },
-            ],
+            items: MODES.map(([name, mode]) => ({
+              icon: '⊹',
+              children: name,
+              selection: appearanceMode === mode,
+              onClick: () => setAppearanceMode(mode),
+            })),
           },
           {
             hotkey: '⌃+G',
