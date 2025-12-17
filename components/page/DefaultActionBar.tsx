@@ -115,178 +115,42 @@ interface DefaultActionBarProps {
 }
 
 const FONTS = [
-              ['Chicago FLF Proportional [MIT]', 'font-use-chicago-mono'],
-              {
-                icon: '⊹',
-                children: 'Commit Mono V143 [OFL]',
-                onClick: () => setFont('font-use-commit-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'CodeNewRoman Mono 2.0 [OFL]',
-                onClick: () => setFont('font-use-code-new-roman-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Departure Mono [MIT]',
-                onClick: () => setFont('font-use-departure-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Fira Code [OFL]',
-                onClick: () => setFont('font-use-fira-code'),
-              },
-              {
-                icon: '⊹',
-                children: 'Fragment Mono [OFL]',
-                onClick: () => setFont('font-use-fragment-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'GlassTTY: TrueType VT220 [NO LICENSE]',
-                onClick: () => setFont('font-use-glasstty-vt220'),
-              },
-              {
-                icon: '⊹',
-                children: 'Geist Mono [OFL] [DEFAULT]',
-                onClick: () => setFont(''),
-              },
-              {
-                icon: '⊹',
-                children: 'Intel One Mono 1.4.0 [OFL]',
-                onClick: () => setFont('font-use-intel-one-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Iosevka Term [OFL]',
-                onClick: () => setFont('font-use-iosevka-term'),
-              },
-              {
-                icon: '⊹',
-                children: 'JetBrains Mono [OFL]',
-                onClick: () => setFont('font-use-jet-brains-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Julia Mono 0.061 [OFL]',
-                onClick: () => setFont('font-use-julia-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Kommuna Mono™ Trial [type.tmpstate.net]',
-                onClick: () => setFont('font-use-kommuna-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Monaspace Argon Variable [OFL]',
-                onClick: () => setFont('font-use-monaspace-argon-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Monaspace Krypton Variable [OFL]',
-                onClick: () => setFont('font-use-monaspace-krypton-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Monaspace Neon Variable [OFL]',
-                onClick: () => setFont('font-use-monaspace-neon-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Monaspace Radon Variable [OFL]',
-                onClick: () => setFont('font-use-monaspace-radon-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Monaspace Xenon Variable [OFL]',
-                onClick: () => setFont('font-use-monaspace-xenon-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'M1 Plus Mono [OFL]',
-                onClick: () => setFont('font-use-m1-plus-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Panama Mono™ Trial [type.tmpstate.net]',
-                onClick: () => setFont('font-use-panama-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Web437 DOS/V re. ANK16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web437-dos-v-ank16'),
-              },
-              {
-                icon: '⊹',
-                children: 'Web437 DOS/V re. ANK19 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web437-dos-v-ank19'),
-              },
-              {
-                icon: '⊹',
-                children: 'Web437 DOS/V re. ANK24 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web437-dos-v-ank24'),
-              },
-              {
-                icon: '⊹',
-                children: 'Web437 DOS/V re. ANK30 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web437-dos-v-ank30'),
-              },
-              {
-                icon: '⊹',
-                children: 'Web437 Nix8810 M16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web437-nix8810-m16'),
-              },
-              {
-                icon: '⊹',
-                children: 'Web437 Pheonix EGA 8X8 2Y [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web437-pheonix-ega-8x8-2y'),
-              },
-              {
-                icon: '⊹',
-                children: 'Web437 Sanyo MB C775 2Y [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web437-sanyo-mb-c775-2y'),
-              },
-              {
-                icon: '⊹',
-                children: 'WebPlus AST PremiumExec [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-webplus-ast-premiumexec'),
-              },
-              {
-                icon: '⊹',
-                children: 'WebPlus IBM BIOS [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web-plus-ibm-bios'),
-              },
-              {
-                icon: '⊹',
-                children: 'WebPlus IBM VGA 8X16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-web-plus-ibm-vga-8x16'),
-              },
-              {
-                icon: '⊹',
-                children: 'WebPlus ToshibaTxL1-8x16 [int10h.org] [VileR] [CC BY-SA 4.0]',
-                onClick: () => setFont('font-use-toshiba-tx-l1-8x16'),
-              },
-              {
-                icon: '⊹',
-                children: 'SFMono Square [FOSS]',
-                onClick: () => setFont('font-use-sfmono-square'),
-              },
-              {
-                icon: '⊹',
-                children: 'Server Mono [OFL]',
-                onClick: () => setFont('font-use-server-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'TX-02 Berkeley Mono™ Trial [usgraphics.com]',
-                onClick: () => setFont('font-use-berkeley-mono'),
-              },
-              {
-                icon: '⊹',
-                children: 'Ubuntu Sans Mono 1.006 [UBL]',
-                onClick: () => setFont('font-use-ubuntu-mono'),
-              },
-            ];
+  ['Chicago FLF Proportional [MIT]', 'font-use-chicago-mono'],
+  ['Commit Mono V143 [OFL]', 'font-use-commit-mono'],
+  ['CodeNewRoman Mono 2.0 [OFL]', 'font-use-code-new-roman-mono'],
+  ['Departure Mono [MIT]', 'font-use-departure-mono'],
+  ['Fira Code [OFL]', 'font-use-fira-code'],
+  ['Fragment Mono [OFL]', 'font-use-fragment-mono'],
+  ['GlassTTY: TrueType VT220 [NO LICENSE]', 'font-use-glasstty-vt220'],
+  ['Geist Mono [OFL] [DEFAULT]', ''],
+  ['Intel One Mono 1.4.0 [OFL]', 'font-use-intel-one-mono'],
+  ['Iosevka Term [OFL]', 'font-use-iosevka-term'],
+  ['JetBrains Mono [OFL]', 'font-use-jet-brains-mono'],
+  ['Julia Mono 0.061 [OFL]', 'font-use-julia-mono'],
+  ['Kommuna Mono™ Trial [type.tmpstate.net]', 'font-use-kommuna-mono'],
+  ['Monaspace Argon Variable [OFL]', 'font-use-monaspace-argon-mono'],
+  ['Monaspace Krypton Variable [OFL]', 'font-use-monaspace-krypton-mono'],
+  ['Monaspace Neon Variable [OFL]', 'font-use-monaspace-neon-mono'],
+  ['Monaspace Radon Variable [OFL]', 'font-use-monaspace-radon-mono'],
+  ['Monaspace Xenon Variable [OFL]', 'font-use-monaspace-xenon-mono'],
+  ['M1 Plus Mono [OFL]', 'font-use-m1-plus-mono'],
+  ['Panama Mono™ Trial [type.tmpstate.net]', 'font-use-panama-mono'],
+  ['Web437 DOS/V re. ANK16 [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web437-dos-v-ank16'],
+  ['Web437 DOS/V re. ANK19 [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web437-dos-v-ank19'],
+  ['Web437 DOS/V re. ANK24 [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web437-dos-v-ank24'],
+  ['Web437 DOS/V re. ANK30 [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web437-dos-v-ank30'],
+  ['Web437 Nix8810 M16 [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web437-nix8810-m16'],
+  ['Web437 Pheonix EGA 8X8 2Y [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web437-pheonix-ega-8x8-2y'],
+  ['Web437 Sanyo MB C775 2Y [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web437-sanyo-mb-c775-2y'],
+  ['WebPlus AST PremiumExec [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-webplus-ast-premiumexec'],
+  ['WebPlus IBM BIOS [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web-plus-ibm-bios'],
+  ['WebPlus IBM VGA 8X16 [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-web-plus-ibm-vga-8x16'],
+  ['WebPlus ToshibaTxL1-8x16 [int10h.org] [VileR] [CC BY-SA 4.0]', 'font-use-toshiba-tx-l1-8x16'],
+  ['SFMono Square [FOSS]', 'font-use-sfmono-square'],
+  ['Server Mono [OFL]', 'font-use-server-mono'],
+  ['TX-02 Berkeley Mono™ Trial [usgraphics.com]', 'font-use-berkeley-mono'],
+  ['Ubuntu Sans Mono 1.006 [UBL]', 'font-use-ubuntu-mono'],
+];
 
 const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   const [isGrid, setGrid] = React.useState(false);
