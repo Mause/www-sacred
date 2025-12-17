@@ -239,7 +239,7 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               children: name,
               selection: appearanceMode === mode,
               onClick: () => setAppearanceMode(mode),
-            }),
+            })),
           },
           {
             hotkey: '⌃+G',
