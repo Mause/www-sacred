@@ -1,6 +1,5 @@
 import styles from '@components/ActionBar.module.scss';
 
-import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
 import ButtonGroup from '@components/ButtonGroup';
@@ -18,7 +17,7 @@ interface ActionBarProps {
   items: ActionBarItem[];
 }
 
-const ActionBar: React.FC<ActionBarProps> = ({ items }: ActionBarProps) => {
+const ActionBar = ({ items }: ActionBarProps) => {
   return (
     <div className={styles.root}>
       <ButtonGroup items={items} />
