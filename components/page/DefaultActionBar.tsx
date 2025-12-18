@@ -1,6 +1,6 @@
 'use client';
 
-broken words
+const n: number = 'broken words';
 
 import styles from '@components/page/DefaultActionBar.module.scss';
 
