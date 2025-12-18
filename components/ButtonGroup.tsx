@@ -8,7 +8,20 @@ import * as Utilities from '@common/utilities';
 import ActionButton from '@components/ActionButton';
 import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
 
-const ButtonGroup = (props) => {
+export interface ButtonGroupItem {
+  hotkey?: string;
+  body: string; //React.ReactNode;
+  selected?: boolean;
+  onClick?: () => void;
+  openHotkey?: string;
+  items?: {
+    hotkey?: string;
+    body: React.ReactNode;
+    selected?: boolean;
+    onClick?: () => void;
+  }[];
+}
+const ButtonGroup = (props: { items: ButtonGroupItem[]; isFull?: boolean }) => {
   if (!props.items) {
     return null;
   }

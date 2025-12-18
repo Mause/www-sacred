@@ -1,16 +1,14 @@
 import styles from '@components/ActionBar.module.scss';
 
-import * as Utilities from '@common/utilities';
-
-import ButtonGroup from '@components/ButtonGroup';
+import ButtonGroup, { ButtonGroupItem } from '@components/ButtonGroup';
 
 interface ActionBarItem {
   hotkey?: string;
   onClick?: () => void;
   openHotkey?: string;
   selected?: boolean;
-  body: React.ReactNode;
-  items?: any;
+  body: string; //React.ReactNode;
+  items?: ButtonGroupItem[];
 }
 
 interface ActionBarProps {
