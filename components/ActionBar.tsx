@@ -18,7 +18,7 @@ interface ActionBarProps {
   items: ActionBarItem[];
 }
 
-const ActionBar: React.FC<ActionBarProps> = ({ items }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ items }: ActionBarProps) => {
   return (
     <div className={styles.root}>
       <ButtonGroup items={items} />
