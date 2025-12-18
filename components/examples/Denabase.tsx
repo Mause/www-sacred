@@ -2,8 +2,6 @@
 
 import styles from '@components/examples/Denabase.module.scss';
 
-import * as React from 'react';
-
 import ActionButton from '@components/ActionButton';
 import Card from '@components/Card';
 import Divider from '@components/Divider';
@@ -11,7 +9,7 @@ import Row from '@components/Row';
 import RowSpaceBetween from '@components/RowSpaceBetween';
 import SidebarLayout from '@components/SidebarLayout';
 
-const Denabase = (props) => {
+const Denabase = () => {
   return (
     <>
       <Card style={{ overflowWrap: 'break-word' }}>

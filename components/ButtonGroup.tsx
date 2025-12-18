@@ -2,7 +2,6 @@
 
 import styles from '@components/ButtonGroup.module.scss';
 
-import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
 import ActionButton from '@components/ActionButton';
