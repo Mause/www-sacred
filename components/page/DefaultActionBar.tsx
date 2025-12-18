@@ -215,7 +215,7 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
             items: FONTS.map(([name, code]) => ({
               icon: '⊹',
               children: name,
-              selected: font === code,
+              selection: font === code,
               onClick: () => setFont(code),
             })),
           },
