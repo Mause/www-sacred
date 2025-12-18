@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import preserveDirectives from 'rollup-preserve-directives';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -13,6 +14,7 @@ export default defineConfig({
       tsconfigPath: resolve(__dirname, 'tsconfig.json'),
       insertTypesEntry: true,
     }),
+    preserveDirectives(),
   ],
   build: {
     sourcemap: true,
