@@ -213,7 +213,7 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
             items: FONTS.map(([name, code]) => ({
               icon: '⊹',
               children: name,
-              selection: font === code,
+              selected: font === code,
               onClick: () => setFont(code),
             })),
           },
@@ -225,13 +225,13 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               {
                 icon: '⊹',
                 children: 'Light',
-                selection: theme === '',
+                selected: theme === '',
                 onClick: () => setTheme(''),
               },
               {
                 icon: '⊹',
                 children: 'Dark',
-                selection: theme === 'theme-dark',
+                selected: theme === 'theme-dark',
                 onClick: () => setTheme('theme-dark'),
               },
             ],
@@ -243,7 +243,7 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
             items: MODES.map(([name, mode]) => ({
               icon: '⊹',
               children: name,
-              selection: appearanceMode === mode,
+              selected: appearanceMode === mode,
               onClick: () => setAppearanceMode(mode),
             })),
           },
