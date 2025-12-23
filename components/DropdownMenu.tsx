@@ -10,7 +10,7 @@ import ModalTrigger from '@components/ModalTrigger';
 
 import { useHotkeys } from '@modules/hotkeys';
 
-interface DropdownMenuItemProps {
+export interface DropdownMenuItemProps {
   children: React.ReactNode;
   icon?: React.ReactNode;
   href?: string;

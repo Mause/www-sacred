@@ -9,7 +9,7 @@ import { toggleDebugGrid } from '@components/DebugGrid';
 import { useHotkeys } from '@modules/hotkeys';
 
 import ActionBar from '@components/ActionBar';
-import ButtonGroup from '@components/ButtonGroup';
+import ButtonGroup, { ButtonGroupItem } from '@components/ButtonGroup';
 
 function isElement(target: EventTarget | null): target is Element {
   return target instanceof Element;
@@ -106,12 +106,7 @@ const useGlobalNavigationHotkeys = () => {
 };
 
 interface DefaultActionBarProps {
-  items?: {
-    hotkey: string;
-    onClick: () => void;
-    body: React.ReactNode;
-    items?: any;
-  }[];
+  items?: ButtonGroupItem[];
 }
 
 const FONTS = [
@@ -225,13 +220,13 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               {
                 icon: '⊹',
                 children: 'Light',
-                selection: theme === '',
+                // selected: theme === '',
                 onClick: () => setTheme(''),
               },
               {
                 icon: '⊹',
                 children: 'Dark',
-                selection: theme === 'theme-dark',
+                // selected: theme === 'theme-dark',
                 onClick: () => setTheme('theme-dark'),
               },
             ],
@@ -243,7 +238,7 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
             items: MODES.map(([name, mode]) => ({
               icon: '⊹',
               children: name,
-              selection: appearanceMode === mode,
+              selected: appearanceMode === mode,
               onClick: () => setAppearanceMode(mode),
             })),
           },

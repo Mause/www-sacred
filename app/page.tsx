@@ -2,7 +2,6 @@ import '@root/global-fonts.css';
 import '@root/global.css';
 
 import * as Constants from '@common/constants';
-import * as Utilities from '@common/utilities';
 
 // NOTE(jimmylee): This is a kitchen sink of all components.
 // When forking or remixing, you'll likely only need a few.
@@ -16,7 +15,6 @@ import Avatar from '@components/Avatar';
 import Badge from '@components/Badge';
 import BarLoader from '@components/BarLoader';
 import BarProgress from '@components/BarProgress';
-import Block from '@components/Block';
 import BlockLoader from '@components/BlockLoader';
 import Breadcrumbs from '@components/BreadCrumbs';
 import Button from '@components/Button';
@@ -43,7 +41,6 @@ import Grid from '@components/Grid';
 import HoverComponentTrigger from '@components/HoverComponentTrigger';
 import Indent from '@components/Indent';
 import Input from '@components/Input';
-import IntDevLogo from '@components/svg/IntDevLogo';
 import ListItem from '@components/ListItem';
 import Message from '@components/Message';
 import MessageViewer from '@components/MessageViewer';
@@ -63,13 +60,11 @@ import Package from '@root/package.json';
 import RadioButtonGroup from '@components/RadioButtonGroup';
 import Row from '@components/Row';
 import RowSpaceBetween from '@components/RowSpaceBetween';
-import Script from 'next/script';
 import Select from '@components/Select';
 import SidebarLayout from '@components/SidebarLayout';
 import Table from '@components/Table';
 import TableRow from '@components/TableRow';
 import TableColumn from '@components/TableColumn';
-import Text from '@components/Text';
 import TextArea from '@components/TextArea';
 import TreeView from '@components/TreeView';
 import UpdatingDataTable from '@components/examples/UpdatingDataTable';
@@ -79,7 +74,7 @@ export const dynamic = 'force-static';
 
 // NOTE(jimmylee)
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
-export async function generateMetadata({ params, searchParams }) {
+export async function generateMetadata() {
   const title = Package.name;
   const description = Package.description;
   const url = 'https://sacred.computer';
@@ -127,7 +122,7 @@ export async function generateMetadata({ params, searchParams }) {
 
 // NOTE(jimmylee)
 // https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
-export default async function Page(props) {
+export default async function Page() {
   return (
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <br />
