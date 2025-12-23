@@ -8,8 +8,8 @@ import * as Utilities from '@common/utilities';
 import { toggleDebugGrid } from '@components/DebugGrid';
 import { useHotkeys } from '@modules/hotkeys';
 
-import ActionBar, { ActionBarItem } from '@components/ActionBar';
-import ButtonGroup from '@components/ButtonGroup';
+import ActionBar from '@components/ActionBar';
+import ButtonGroup, { ButtonGroupItem } from '@components/ButtonGroup';
 
 function isElement(target: EventTarget | null): target is Element {
   return target instanceof Element;
@@ -106,7 +106,7 @@ const useGlobalNavigationHotkeys = () => {
 };
 
 interface DefaultActionBarProps {
-  items?: ActionBarItem[];
+  items?: ButtonGroupItem[];
 }
 
 const FONTS = [
