@@ -3,17 +3,8 @@ import styles from '@components/ActionBar.module.scss';
 import * as React from 'react';
 import ButtonGroup, { ButtonGroupItem } from '@components/ButtonGroup';
 
-interface ActionBarItem {
-  hotkey?: string;
-  onClick?: () => void;
-  openHotkey?: string;
-  selected?: boolean;
-  body: string; //React.ReactNode;
-  items?: ButtonGroupItem[];
-}
-
 interface ActionBarProps {
-  items: ActionBarItem[];
+  items: ButtonGroupItem[];
 }
 
 const ActionBar: React.FC<ActionBarProps> = ({ items }) => {
