@@ -220,13 +220,13 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               {
                 icon: '⊹',
                 children: 'Light',
-                selected: theme === '',
+                // selected: theme === '',
                 onClick: () => setTheme(''),
               },
               {
                 icon: '⊹',
                 children: 'Dark',
-                selected: theme === 'theme-dark',
+                // selected: theme === 'theme-dark',
                 onClick: () => setTheme('theme-dark'),
               },
             ],
