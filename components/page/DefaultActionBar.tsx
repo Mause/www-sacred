@@ -8,7 +8,7 @@ import * as Utilities from '@common/utilities';
 import { toggleDebugGrid } from '@components/DebugGrid';
 import { useHotkeys } from '@modules/hotkeys';
 
-import ActionBar from '@components/ActionBar';
+import ActionBar, { ActionBarItem } from '@components/ActionBar';
 import ButtonGroup from '@components/ButtonGroup';
 
 function isElement(target: EventTarget | null): target is Element {
@@ -106,12 +106,7 @@ const useGlobalNavigationHotkeys = () => {
 };
 
 interface DefaultActionBarProps {
-  items?: {
-    hotkey: string;
-    onClick: () => void;
-    body: string; // React.ReactNode;
-    items?: any;
-  }[];
+  items?: ActionBarItem[];
 }
 
 const FONTS = [
