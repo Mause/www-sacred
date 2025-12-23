@@ -5,6 +5,7 @@ import styles from '@components/ButtonGroup.module.scss';
 import * as Utilities from '@common/utilities';
 
 import ActionButton from '@components/ActionButton';
+import { DropdownMenuItemProps } from '@components/DropdownMenu';
 import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
 
 export interface ButtonGroupItem {
@@ -13,12 +14,7 @@ export interface ButtonGroupItem {
   selected?: boolean;
   onClick?: () => void;
   openHotkey?: string;
-  items?: {
-    hotkey?: string;
-    body: React.ReactNode;
-    selected?: boolean;
-    onClick?: () => void;
-  }[];
+  items?: DropdownMenuItemProps[];
 }
 const ButtonGroup = (props: { items: ButtonGroupItem[]; isFull?: boolean }) => {
   if (!props.items) {
