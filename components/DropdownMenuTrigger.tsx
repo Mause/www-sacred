@@ -6,7 +6,7 @@ import * as Position from '@common/position';
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
-import DropdownMenu from '@components/DropdownMenu';
+import DropdownMenu, { DropdownMenuItemProps } from '@components/DropdownMenu';
 import OutsideElementEvent from '@components/detectors/OutsideElementEvent';
 
 import { createPortal } from 'react-dom';
@@ -14,7 +14,7 @@ import { useHotkeys } from '@modules/hotkeys';
 
 interface DropdownMenuTriggerProps {
   children: React.ReactElement<React.HTMLAttributes<HTMLElement>>;
-  items: any;
+  items: DropdownMenuItemProps[];
   hotkey?: string;
 }
 
