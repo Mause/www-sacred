@@ -109,7 +109,7 @@ interface DefaultActionBarProps {
   items?: {
     hotkey: string;
     onClick: () => void;
-    body: React.ReactNode;
+    body: string; // React.ReactNode;
     items?: any;
   }[];
 }
