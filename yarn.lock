@@ -529,6 +529,7 @@ __metadata:
   dependencies:
     "@types/node": "npm:^24.10.1"
     "@types/react": "npm:^19.2.7"
+    "@types/react-dom": "npm:^19.2.3"
     next: "npm:^16.0.7"
     react: "npm:^19.2.0"
     react-dom: "npm:^19.2.0"
@@ -1364,6 +1365,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~7.16.0"
   checksum: 10c0/560c894e1a9bf7468718ceca8cd520361fd0d3fcc0b020c2f028fc722b28b5b56aecd16736a9b753d52a14837c066cf23480a8582ead59adc63a7e4333bc976c
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^19.2.3":
+  version: 19.2.3
+  resolution: "@types/react-dom@npm:19.2.3"
+  peerDependencies:
+    "@types/react": ^19.2.0
+  checksum: 10c0/b486ebe0f4e2fb35e2e108df1d8fc0927ca5d6002d5771e8a739de11239fe62d0e207c50886185253c99eb9dedfeeb956ea7429e5ba17f6693c7acb4c02f8cd1
   languageName: node
   linkType: hard
 
