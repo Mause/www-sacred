@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '@components/examples/Denabase.module.scss';
+import styles from '@components/examples/Denabase.module.css';
 
 import ActionButton from '@components/ActionButton';
 import Card from '@components/Card';
