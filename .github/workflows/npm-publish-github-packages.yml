@@ -45,6 +45,7 @@ jobs:
         with:
           cache: yarn
           node-version: 20
+          registry-url: "https://registry.npmjs.org"
       - run: yarn --immutable
       - run: |
           npm version "${{ github.event.release.tag_name || 'v0.0.0' }}" --no-git-tag-version
