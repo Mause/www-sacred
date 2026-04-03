@@ -56,7 +56,7 @@ jobs:
           npm version
       - run: yarn build
       - run: yarn pack
-      - run: npm publish package.tgz --dry-run
+      - run: npm publish package.tgz --dry-run --provenance --access public
       - if: github.event_name == 'release'
         run: |
-          npm publish package.tgz
+          npm publish package.tgz --provenance --access public
