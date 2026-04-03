@@ -56,3 +56,5 @@ jobs:
       - if: github.event_name == 'release'
         run: |
           npm publish package.tgz --provenance --access public --verbose
+      - if: failure()
+        run: yarn npm publish --access public --provenance --json
