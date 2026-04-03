@@ -1,8 +1,5 @@
 {
   "name": "@mause/www-sacred",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mause/www-sacred.git"
