@@ -4,7 +4,7 @@ import * as React from 'react';
 
 interface DividerProps extends React.HTMLAttributes<HTMLSpanElement> {
   children?: React.ReactNode;
-  type?: string | any;
+  type?: "GRADIENT" | "DOUBLE";
   style?: any;
 }
 
