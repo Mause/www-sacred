@@ -65,6 +65,7 @@ const Select: React.FC<SelectProps> = ({ name, options, placeholder, defaultValu
           {selectedValue || placeholder}
         </button>
       </section>
+      <input type="hidden" name={name} value={selectedValue} />
 
       {isOpen && (
         <ul className={styles.menu} role="listbox">
